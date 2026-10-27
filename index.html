@@ -1,24 +1,908 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guadalupe</title>
-</head>
-<body>
-   <img src="data:image/jpeg;base64,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" alt="">
-    <p style="color: blue;">Hola guadalupe</p>
-    <p style="color: blue;">Puedo programar mas rapido</p>
-    <p style="color: blue;">Puedo programar mas rapido</p>
-    <p style="color: blue;">Puedo programar mas rapido</p>
-    <p style="color: blue;">Puedo programar mas rapido</p>
-    <p style="color: blue;">Puedo programar mas rapido</p>
-    <p style="color: blue;">Puedo programar mas rapido</p>
-    <p style="color: blue;">Puedo programar mas rapido</p>
-    <p style="color: blue;">Puedo programar mas rapido</p>
-    <p style="color: blue;">Puedo programar mas rapido</p>
-    <p style="color: blue;">Puedo programar mas rapido</p>
-
+    <title>Dulce Encanto | Arte y Recetas de Repostería</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Playfair Display + Plus Jakarta Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Configuración personalizada de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fff5f6',
+                            100: '#fde8eb',
+                            200: '#fbd0d7',
+                            300: '#f7a8b6',
+                            400: '#f2768e',
+                            500: '#e64467', // Rosa Principal
+                            600: '#d12950',
+                            700: '#b01d3f',
+                            800: '#921b38',
+                            900: '#7b1b33',
+                        },
+                        cream: {
+                            50: '#fdfbf7',
+                            100: '#fbf7ee', // Fondo cálido pastel
+                            200: '#f6ebd7',
+                            300: '#eedcb8',
+                            800: '#4a3e31', // Texto chocolate
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fbf7ee;
+            color: #4a3e31;
+        }
+        .font-serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fbf7ee;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f7a8b6;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e64467;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-200 selection:text-brand-900 flex flex-col min-h-screen">
+
+    <!-- NAV BAR -->
+    <header class="sticky top-0 z-40 bg-cream-50/90 backdrop-blur-md border-b border-cream-200 transition-all duration-300" id="main-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-2xl bg-brand-500 flex items-center justify-center text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid font-bold fa-cake-candles text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-serif-title text-2xl font-bold text-cream-800 tracking-tight block leading-none">Dulce Encanto</span>
+                        <span class="text-[10px] font-semibold uppercase tracking-widest text-brand-500">Repostería Artesanal</span>
+                    </div>
+                </a>
+
+                <!-- Navegación Escritorio -->
+                <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                    <a href="#inicio" class="hover:text-brand-500 transition-colors py-1">Inicio</a>
+                    <a href="#recetas" class="hover:text-brand-500 transition-colors py-1">Recetas</a>
+                    <a href="#categorias" class="hover:text-brand-500 transition-colors py-1">Categorías</a>
+                    <a href="#tips" class="hover:text-brand-500 transition-colors py-1">Secretos & Tips</a>
+                    <a href="#contacto" class="hover:text-brand-500 transition-colors py-1">Contacto</a>
+                </nav>
+
+                <!-- Botón Favoritos & Acción -->
+                <div class="hidden md:flex items-center gap-4">
+                    <button onclick="toggleFilterFavorites()" id="fav-badge-btn" class="relative p-2.5 rounded-xl bg-cream-200/60 hover:bg-cream-200 text-cream-800 transition-all">
+                        <i class="fa-solid fa-heart text-brand-500 text-lg"></i>
+                        <span id="fav-count" class="absolute -top-1 -right-1 bg-brand-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white">0</span>
+                    </button>
+                    <a href="#recetas" class="bg-brand-500 hover:bg-brand-600 text-white font-semibold px-5 py-2.5 rounded-xl shadow-lg shadow-brand-500/25 transition-all hover:shadow-brand-500/40 hover:-translate-y-0.5 active:translate-y-0 text-sm">
+                        Explorar Recetas
+                    </a>
+                </div>
+
+                <!-- Botón Menú Móvil -->
+                <div class="md:hidden flex items-center gap-3">
+                    <button onclick="toggleFilterFavorites()" class="relative p-2 rounded-lg bg-cream-200/60 text-cream-800">
+                        <i class="fa-solid fa-heart text-brand-500"></i>
+                        <span id="fav-count-mobile" class="absolute -top-1 -right-1 bg-brand-500 text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2.5 rounded-xl bg-cream-200/50 text-cream-800 hover:bg-cream-200 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream-50 border-b border-cream-200 px-4 pt-2 pb-6 space-y-3">
+            <a href="#inicio" class="block py-2 text-base font-medium hover:text-brand-500 border-b border-cream-100">Inicio</a>
+            <a href="#recetas" class="block py-2 text-base font-medium hover:text-brand-500 border-b border-cream-100">Recetas</a>
+            <a href="#categorias" class="block py-2 text-base font-medium hover:text-brand-500 border-b border-cream-100">Categorías</a>
+            <a href="#tips" class="block py-2 text-base font-medium hover:text-brand-500 border-b border-cream-100">Secretos & Tips</a>
+            <a href="#contacto" class="block py-2 text-base font-medium hover:text-brand-500">Contacto</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- SECCIÓN HERO -->
+        <section id="inicio" class="relative overflow-hidden pt-8 pb-16 lg:pt-16 lg:pb-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Texto Hero -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100 text-brand-700 text-xs font-semibold uppercase tracking-wider">
+                            <i class="fa-solid fa-wand-magic-sparkles text-brand-500"></i>
+                            El Rincón Dulce de la Cocina
+                        </div>
+                        <h1 class="font-serif-title text-4xl sm:text-5xl lg:text-6xl font-extrabold text-cream-800 leading-[1.15]">
+                            Descubre la magia de la <span class="text-brand-500 underline decoration-brand-200 underline-offset-8">repostería</span> en casa.
+                        </h1>
+                        <p class="text-lg text-cream-800/80 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                            Aprende a preparar deliciosos pasteles, galletas crujientes y tartas irresistibles con nuestras recetas detalladas explicadas paso a paso por expertos.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                            <a href="#recetas" class="w-full sm:w-auto text-center bg-brand-500 hover:bg-brand-600 text-white font-bold px-8 py-4 rounded-2xl shadow-lg shadow-brand-500/30 transition-all hover:-translate-y-1">
+                                Ver Recetas Recientes <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                            <a href="#tips" class="w-full sm:w-auto text-center bg-white hover:bg-cream-200/50 text-cream-800 font-semibold px-8 py-4 rounded-2xl border border-cream-200 transition-all">
+                                Tips de Repostería
+                            </a>
+                        </div>
+
+                        <!-- Métricas Rápidas -->
+                        <div class="pt-8 grid grid-cols-3 gap-4 border-t border-cream-200/80 max-w-md mx-auto lg:mx-0">
+                            <div>
+                                <span class="block font-serif-title text-2xl font-bold text-cream-800">50+</span>
+                                <span class="text-xs text-cream-800/70 font-medium">Recetas Guiadas</span>
+                            </div>
+                            <div>
+                                <span class="block font-serif-title text-2xl font-bold text-cream-800">100%</span>
+                                <span class="text-xs text-cream-800/70 font-medium">Paso a Paso</span>
+                            </div>
+                            <div>
+                                <span class="block font-serif-title text-2xl font-bold text-cream-800">4.9 ★</span>
+                                <span class="text-xs text-cream-800/70 font-medium">Valoración</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Imagen Hero -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="absolute -inset-4 bg-gradient-to-tr from-brand-300 to-cream-300 rounded-3xl blur-2xl opacity-50 -z-10"></div>
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80" alt="Pastel de Chocolate Decorado" class="w-full h-[450px] object-cover hover:scale-105 transition-transform duration-700">
+                            <div class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-lg border border-white/50 flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center text-brand-500 font-bold shrink-0">
+                                    <i class="fa-solid fa-crown text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-cream-800 text-sm">Receta de la Semana</h4>
+                                    <p class="text-xs text-cream-800/70">Pastel de Chocolate Belga Trufado</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN CATEGORÍAS -->
+        <section id="categorias" class="py-12 bg-white/60 border-y border-cream-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-xl mx-auto mb-10">
+                    <h2 class="font-serif-title text-3xl font-bold text-cream-800">Categorías Populares</h2>
+                    <p class="text-sm text-cream-800/70 mt-2">Encuentra la inspiración según tu antojo del día</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+                    <!-- Categoría 1 -->
+                    <button onclick="filterByCategory('Pasteles')" class="category-card group bg-cream-50 hover:bg-brand-50 border border-cream-200 hover:border-brand-300 p-6 rounded-2xl transition-all text-center flex flex-col items-center">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-100 text-brand-500 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 group-hover:bg-brand-500 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-cake-candles"></i>
+                        </div>
+                        <h3 class="font-bold text-cream-800 group-hover:text-brand-600 transition-colors">Pasteles</h3>
+                        <span class="text-xs text-cream-800/60 mt-1">12 Recetas</span>
+                    </button>
+
+                    <!-- Categoría 2 -->
+                    <button onclick="filterByCategory('Galletas')" class="category-card group bg-cream-50 hover:bg-brand-50 border border-cream-200 hover:border-brand-300 p-6 rounded-2xl transition-all text-center flex flex-col items-center">
+                        <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-cookie"></i>
+                        </div>
+                        <h3 class="font-bold text-cream-800 group-hover:text-brand-600 transition-colors">Galletas</h3>
+                        <span class="text-xs text-cream-800/60 mt-1">15 Recetas</span>
+                    </button>
+
+                    <!-- Categoría 3 -->
+                    <button onclick="filterByCategory('Tartas')" class="category-card group bg-cream-50 hover:bg-brand-50 border border-cream-200 hover:border-brand-300 p-6 rounded-2xl transition-all text-center flex flex-col items-center">
+                        <div class="w-14 h-14 rounded-2xl bg-rose-100 text-rose-500 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 group-hover:bg-rose-500 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-pie-chart"></i>
+                        </div>
+                        <h3 class="font-bold text-cream-800 group-hover:text-brand-600 transition-colors">Tartas</h3>
+                        <span class="text-xs text-cream-800/60 mt-1">8 Recetas</span>
+                    </button>
+
+                    <!-- Categoría 4 -->
+                    <button onclick="filterByCategory('Postres Fríos')" class="category-card group bg-cream-50 hover:bg-brand-50 border border-cream-200 hover:border-brand-300 p-6 rounded-2xl transition-all text-center flex flex-col items-center">
+                        <div class="w-14 h-14 rounded-2xl bg-sky-100 text-sky-500 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 group-hover:bg-sky-500 group-hover:text-white transition-all">
+                            <i class="fa-solid fa-ice-cream"></i>
+                        </div>
+                        <h3 class="font-bold text-cream-800 group-hover:text-brand-600 transition-colors">Postres Fríos</h3>
+                        <span class="text-xs text-cream-800/60 mt-1">10 Recetas</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE RECETAS CON BUSCADOR Y FILTROS -->
+        <section id="recetas" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+                <div>
+                    <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-cream-800">Recetas Destacadas</h2>
+                    <p class="text-cream-800/70 text-sm mt-1">Filtra y busca entre nuestras delicias horneadas</p>
+                </div>
+
+                <!-- Buscador Input -->
+                <div class="w-full md:w-80 relative">
+                    <input type="text" id="search-input" onkeyup="handleSearch()" placeholder="Buscar receta o ingrediente..." class="w-full bg-white border border-cream-200 rounded-2xl py-3 pl-11 pr-4 text-sm focus:outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-200 shadow-sm transition-all">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-cream-800/40"></i>
+                </div>
+            </div>
+
+            <!-- Botones Filtros Interactivos -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none" id="filter-buttons">
+                <button onclick="filterByCategory('todos')" class="filter-btn active bg-brand-500 text-white font-semibold px-5 py-2 rounded-xl text-sm whitespace-nowrap transition-all shadow-md">Todas</button>
+                <button onclick="filterByCategory('Pasteles')" class="filter-btn bg-white hover:bg-cream-200/50 text-cream-800 border border-cream-200 font-medium px-5 py-2 rounded-xl text-sm whitespace-nowrap transition-all">Pasteles</button>
+                <button onclick="filterByCategory('Galletas')" class="filter-btn bg-white hover:bg-cream-200/50 text-cream-800 border border-cream-200 font-medium px-5 py-2 rounded-xl text-sm whitespace-nowrap transition-all">Galletas</button>
+                <button onclick="filterByCategory('Tartas')" class="filter-btn bg-white hover:bg-cream-200/50 text-cream-800 border border-cream-200 font-medium px-5 py-2 rounded-xl text-sm whitespace-nowrap transition-all">Tartas</button>
+                <button onclick="filterByCategory('Postres Fríos')" class="filter-btn bg-white hover:bg-cream-200/50 text-cream-800 border border-cream-200 font-medium px-5 py-2 rounded-xl text-sm whitespace-nowrap transition-all">Postres Fríos</button>
+            </div>
+
+            <!-- Grid de Recetas Dinámicas -->
+            <div id="recipes-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Se puebla mediante JavaScript -->
+            </div>
+
+            <!-- Mensaje Estado Vacío -->
+            <div id="empty-state" class="hidden text-center py-16 bg-white/50 rounded-3xl border border-dashed border-cream-300">
+                <i class="fa-solid fa-cookie-bite text-5xl text-cream-300 mb-4"></i>
+                <h3 class="font-serif-title text-xl font-bold text-cream-800">No encontramos ninguna receta</h3>
+                <p class="text-sm text-cream-800/60 mt-1">Intenta ajustando tu búsqueda o los filtros seleccionados.</p>
+                <button onclick="resetFilters()" class="mt-4 bg-brand-500 text-white text-sm font-semibold px-4 py-2 rounded-xl">Restablecer filtros</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN TIPS & SECRETOS DE REPOSTERÍA -->
+        <section id="tips" class="py-16 bg-cream-200/40 border-y border-cream-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <span class="text-brand-500 font-bold text-xs uppercase tracking-widest">Consejos de Chef</span>
+                    <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-cream-800 mt-1">Secretos para un Horneado Perfecto</h2>
+                    <p class="text-sm text-cream-800/70 mt-2">La repostería es una ciencia exacta. Sigue estos tips para que tus creaciones queden siempre deliciosas.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Tip 1 -->
+                    <div class="bg-white p-8 rounded-3xl border border-cream-200 shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-100 text-brand-500 flex items-center justify-center text-xl font-bold mb-6">
+                            <i class="fa-solid fa-temperature-three-quarters"></i>
+                        </div>
+                        <h3 class="font-serif-title text-xl font-bold text-cream-800 mb-3">Ingredientes a Temperatura Ambiente</h3>
+                        <p class="text-sm text-cream-800/70 leading-relaxed">
+                            Los huevos, la mantequilla y la leche se emulsionan mucho mejor cuando están a temperatura ambiente, logrando masas más homogéneas y esponjosas.
+                        </p>
+                    </div>
+
+                    <!-- Tip 2 -->
+                    <div class="bg-white p-8 rounded-3xl border border-cream-200 shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-100 text-brand-500 flex items-center justify-center text-xl font-bold mb-6">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <h3 class="font-serif-title text-xl font-bold text-cream-800 mb-3">Pesa tus Ingredientes</h3>
+                        <p class="text-sm text-cream-800/70 leading-relaxed">
+                            Una taza de harina puede variar según cómo se llene. Para obtener resultados profesionales y consistentes, utiliza siempre una báscula gramera.
+                        </p>
+                    </div>
+
+                    <!-- Tip 3 -->
+                    <div class="bg-white p-8 rounded-3xl border border-cream-200 shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-100 text-brand-500 flex items-center justify-center text-xl font-bold mb-6">
+                            <i class="fa-solid fa-door-closed"></i>
+                        </div>
+                        <h3 class="font-serif-title text-xl font-bold text-cream-800 mb-3">No Abras el Horno Antes</h3>
+                        <p class="text-sm text-cream-800/70 leading-relaxed">
+                            Evita abrir la puerta del horno durante los primeros 2/3 del tiempo de horneado. La pérdida repentina de calor puede hacer que tus pasteles se bajen.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN BOLETÍN & CONTACTO -->
+        <section id="contacto" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 bg-white rounded-3xl border border-cream-200 shadow-xl overflow-hidden">
+                
+                <!-- Columna Izquierda: Newsletter -->
+                <div class="lg:col-span-5 bg-brand-500 p-8 lg:p-12 text-white flex flex-col justify-between relative overflow-hidden">
+                    <div class="relative z-10 space-y-6">
+                        <span class="inline-block px-3 py-1 bg-white/20 rounded-full text-xs font-semibold tracking-wider uppercase">Comunidad Repostera</span>
+                        <h3 class="font-serif-title text-3xl font-bold leading-tight">Únete al Club Dulce Encanto</h3>
+                        <p class="text-white/90 text-sm leading-relaxed">
+                            Suscríbete para recibir recetas exclusivas semanalmente, trucos de horneado y descuentos especiales en nuestros talleres.
+                        </p>
+
+                        <form id="newsletter-form" onsubmit="handleNewsletterSubmit(event)" class="space-y-3 pt-2">
+                            <input type="email" required placeholder="Tu correo electrónico" class="w-full px-4 py-3.5 rounded-xl bg-white/10 border border-white/30 text-white placeholder-white/70 text-sm focus:outline-none focus:bg-white/20 transition-all">
+                            <button type="submit" class="w-full bg-cream-800 hover:bg-cream-900 text-white font-bold py-3.5 rounded-xl text-sm transition-all shadow-md">
+                                Suscribirme Ahora
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="relative z-10 pt-8 border-t border-white/20 mt-8 flex items-center gap-4 text-sm text-white/80">
+                        <i class="fa-solid fa-shield-halved text-lg"></i>
+                        <span>Cero Spam. Puedes darte de baja cuando quieras.</span>
+                    </div>
+
+                    <!-- Decorativo de fondo -->
+                    <div class="absolute -bottom-10 -right-10 w-48 h-48 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+                </div>
+
+                <!-- Columna Derecha: Formulario Contacto -->
+                <div class="lg:col-span-7 p-8 lg:p-12">
+                    <h3 class="font-serif-title text-2xl font-bold text-cream-800 mb-2">¿Tienes alguna duda o sugerencia?</h3>
+                    <p class="text-sm text-cream-800/70 mb-6">Escríbenos tu mensaje y nuestro equipo repostero te responderá pronto.</p>
+
+                    <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-cream-800 uppercase tracking-wider mb-2">Nombre</label>
+                                <input type="text" required placeholder="Ej. Sofia" class="w-full bg-cream-50 border border-cream-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-cream-800 uppercase tracking-wider mb-2">Correo</label>
+                                <input type="email" required placeholder="tu@email.com" class="w-full bg-cream-50 border border-cream-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-cream-800 uppercase tracking-wider mb-2">Asunto</label>
+                            <input type="text" required placeholder="Consulta sobre receta, sugerencia..." class="w-full bg-cream-50 border border-cream-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-cream-800 uppercase tracking-wider mb-2">Mensaje</label>
+                            <textarea rows="4" required placeholder="Escribe tu mensaje aquí..." class="w-full bg-cream-50 border border-cream-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand-500 resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="bg-brand-500 hover:bg-brand-600 text-white font-bold px-8 py-3.5 rounded-xl text-sm transition-all shadow-lg shadow-brand-500/20">
+                            Enviar Mensaje <i class="fa-solid fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-cream-800 text-cream-100 pt-12 pb-8 border-t border-cream-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-cream-100/10">
+                
+                <div class="space-y-4 md:col-span-1">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-brand-500 flex items-center justify-center text-white font-bold">
+                            <i class="fa-solid fa-cake-candles"></i>
+                        </div>
+                        <span class="font-serif-title text-xl font-bold text-white tracking-tight">Dulce Encanto</span>
+                    </div>
+                    <p class="text-xs text-cream-100/70 leading-relaxed">
+                        Tu espacio de repostería preferido para aprender, compartir y saborear los mejores postres caseros.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white text-sm mb-4">Navegación</h4>
+                    <ul class="space-y-2 text-xs text-cream-100/80">
+                        <li><a href="#inicio" class="hover:text-brand-300 transition-colors">Inicio</a></li>
+                        <li><a href="#recetas" class="hover:text-brand-300 transition-colors">Recetas</a></li>
+                        <li><a href="#categorias" class="hover:text-brand-300 transition-colors">Categorías</a></li>
+                        <li><a href="#tips" class="hover:text-brand-300 transition-colors">Tips</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white text-sm mb-4">Categorías</h4>
+                    <ul class="space-y-2 text-xs text-cream-100/80">
+                        <li><a href="#recetas" onclick="filterByCategory('Pasteles')" class="hover:text-brand-300 transition-colors">Pasteles y Tartas</a></li>
+                        <li><a href="#recetas" onclick="filterByCategory('Galletas')" class="hover:text-brand-300 transition-colors">Galletas Caseras</a></li>
+                        <li><a href="#recetas" onclick="filterByCategory('Postres Fríos')" class="hover:text-brand-300 transition-colors">Postres Fríos</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white text-sm mb-4">Síguenos</h4>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-9 h-9 rounded-xl bg-white/10 hover:bg-brand-500 flex items-center justify-center text-white transition-all"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-xl bg-white/10 hover:bg-brand-500 flex items-center justify-center text-white transition-all"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 rounded-xl bg-white/10 hover:bg-brand-500 flex items-center justify-center text-white transition-all"><i class="fa-brands fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-cream-100/50">
+                <p>&copy; 2026 Dulce Encanto. Todos los derechos reservados.</p>
+                <p class="mt-2 sm:mt-0">Diseñado con <i class="fa-solid fa-heart text-brand-400"></i> para amantes del horneado.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL DETALLE DE RECETA -->
+    <div id="recipe-modal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-black/60 backdrop-blur-sm p-4 sm:p-6 md:p-10 flex items-center justify-center transition-opacity">
+        <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative animate-in fade-in zoom-in duration-200">
+            <!-- Botón Cerrar Modal -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/80 hover:bg-white text-cream-800 flex items-center justify-center shadow-md transition-all">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <!-- Encabezado Modal con Imagen -->
+            <div class="relative h-64 sm:h-80 w-full">
+                <img id="modal-img" src="" alt="" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-6 left-6 right-6 text-white">
+                    <span id="modal-category" class="px-3 py-1 bg-brand-500 text-xs font-bold rounded-lg uppercase tracking-wider">Categoría</span>
+                    <h3 id="modal-title" class="font-serif-title text-2xl sm:text-3xl font-bold mt-2">Título Receta</h3>
+                </div>
+            </div>
+
+            <!-- Contenido Modal -->
+            <div class="p-6 sm:p-8 space-y-6">
+                <!-- Meta Info -->
+                <div class="flex flex-wrap items-center gap-6 py-3 border-b border-cream-200 text-sm">
+                    <div class="flex items-center gap-2 text-cream-800">
+                        <i class="fa-regular fa-clock text-brand-500 text-lg"></i>
+                        <div>
+                            <span class="block text-[10px] uppercase font-bold text-cream-800/50">Tiempo</span>
+                            <span id="modal-time" class="font-semibold">45 min</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-2 text-cream-800">
+                        <i class="fa-solid fa-chart-line text-brand-500 text-lg"></i>
+                        <div>
+                            <span class="block text-[10px] uppercase font-bold text-cream-800/50">Dificultad</span>
+                            <span id="modal-difficulty" class="font-semibold">Media</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-2 text-cream-800">
+                        <i class="fa-solid fa-users text-brand-500 text-lg"></i>
+                        <div>
+                            <span class="block text-[10px] uppercase font-bold text-cream-800/50">Porciones</span>
+                            <span id="modal-servings" class="font-semibold">8 porciones</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lista de Ingredientes -->
+                <div>
+                    <h4 class="font-serif-title text-xl font-bold text-cream-800 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-basket-shopping text-brand-500"></i> Ingredientes
+                    </h4>
+                    <ul id="modal-ingredients" class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-cream-800/90">
+                        <!-- Carga Dinámica -->
+                    </ul>
+                </div>
+
+                <!-- Instrucciones Paso a Paso -->
+                <div>
+                    <h4 class="font-serif-title text-xl font-bold text-cream-800 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-brand-500"></i> Preparación Paso a Paso
+                    </h4>
+                    <ol id="modal-steps" class="space-y-3 text-sm text-cream-800/90">
+                        <!-- Carga Dinámica -->
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTIFICACIÓN TOAST -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-cream-800 text-white px-5 py-3 rounded-2xl shadow-xl flex items-center gap-3 border border-cream-700">
+        <i id="toast-icon" class="fa-solid fa-circle-check text-brand-400"></i>
+        <span id="toast-message" class="text-sm font-medium">Notificación</span>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Data Base de Recetas
+        const recipes = [
+            {
+                id: 1,
+                title: "Pastel Velvet Red Tradicional",
+                category: "Pasteles",
+                time: "60 min",
+                difficulty: "Intermedio",
+                servings: "10-12 pers.",
+                image: "https://images.unsplash.com/photo-1586788680434-30d324b2d46f?auto=format&fit=crop&w=800&q=80",
+                description: "Clásico pastel de terciopelo rojo con suave cobertura de queso crema y vainilla.",
+                ingredients: [
+                    "2 y 1/2 tazas de harina de trigo",
+                    "1 y 1/2 tazas de azúcar",
+                    "1 cdta de bicarbonato de sodio",
+                    "1 cdta de cacao en polvo",
+                    "1 taza de suero de leche (butter milk)",
+                    "2 huevos grandes a temp. ambiente",
+                    "Colorante rojo vegetal",
+                    "400g de queso crema para el betún"
+                ],
+                steps: [
+                    "Precalienta el horno a 175°C y enharina dos moldes redondos.",
+                    "Tamiza los ingredientes secos: harina, azúcar, cacao y bicarbonato.",
+                    "Mezcla los ingredientes líquidos junto con el colorante rojo.",
+                    "Une ambas mezclas con movimientos envolventes sin batir en exceso.",
+                    "Hornea por 30 minutos o hasta que un palillo salga limpio.",
+                    "Deja enfriar por completo antes de rellenar y cubrir con el betún de queso crema."
+                ]
+            },
+            {
+                id: 2,
+                title: "Galletas con Chispas de Chocolate",
+                category: "Galletas",
+                time: "25 min",
+                difficulty: "Fácil",
+                servings: "18 galletas",
+                image: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=800&q=80",
+                description: "Crujientes por fuera y suaves en el centro. El clásico infalible para el café.",
+                ingredients: [
+                    "2 tazas de harina de trigo",
+                    "1/2 taza de mantequilla sin sal derretida",
+                    "1/2 taza de azúcar moreno",
+                    "1/2 taza de azúcar blanca",
+                    "1 huevo + 1 yema",
+                    "1 y 1/2 tazas de chispas de chocolate semi-amargo",
+                    "1 cdta de esencia de vainilla"
+                ],
+                steps: [
+                    "Bate la mantequilla con ambos azúcares hasta acremar.",
+                    "Agrega el huevo, la yema y la vainilla.",
+                    "Incorpora la harina tamizada y mezcla solo hasta integrar.",
+                    "Agrega las chispas de chocolate.",
+                    "Forma bolitas con una cuchara y colócalas en una bandeja con papel encerado.",
+                    "Hornea a 180°C durante 10-12 minutos hasta que los bordes se doren."
+                ]
+            },
+            {
+                id: 3,
+                title: "Tarta de Frutos Rojos y Crema",
+                category: "Tartas",
+                time: "50 min",
+                difficulty: "Intermedio",
+                servings: "8 porciones",
+                image: "https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=800&q=80",
+                description: "Base de masa quebrada crujiente rellena con crema pastelera suave y frutos frescos.",
+                ingredients: [
+                    "200g de harina para masa sablée",
+                    "100g de mantequilla fría en cubos",
+                    "1 huevo",
+                    "500ml de leche entera",
+                    "4 yemas de huevo",
+                    "100g de azúcar",
+                    "40g de fécula de maíz",
+                    "Fresas, frambuesas y arándanos frescos"
+                ],
+                steps: [
+                    "Prepara la masa sablée mezclando harina, mantequilla y huevo. Refrigera 30 min.",
+                    "Estira la masa en un molde para tarta y hornea a ciegas a 180°C por 15 min.",
+                    "Prepara la crema pastelera hirviendo la leche e integrando las yemas con azúcar y fécula.",
+                    "Deja enfriar la crema y vierte sobre la base de tarta horneada.",
+                    "Decora con frutos rojos frescos antes de servir."
+                ]
+            },
+            {
+                id: 4,
+                title: "Cheesecake de Limón Sin Horno",
+                category: "Postres Fríos",
+                time: "30 min (+ refrigeración)",
+                difficulty: "Fácil",
+                servings: "8 porciones",
+                image: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80",
+                description: "Fresco, cremoso y con el toque cítrico perfecto para los días calurosos.",
+                ingredients: [
+                    "200g de galletas María trituradas",
+                    "90g de mantequilla derretida",
+                    "400g de queso crema",
+                    "1 lata de leche condensada",
+                    "Jugo y ralladura de 3 limones frescos",
+                    "10g de gelatina sin sabor activada"
+                ],
+                steps: [
+                    "Mezcla las galletas trituradas con la mantequilla y presiona en la base de un molde.",
+                    "Bate el queso crema con la leche condensada hasta que esté cremoso.",
+                    "Añade el jugo de limón y la gelatina disuelta en hilo continuo.",
+                    "Vierte sobre la base de galleta y decora con ralladura de limón.",
+                    "Refrigera al menos por 4 horas antes de desmoldar."
+                ]
+            },
+            {
+                id: 5,
+                title: "Macarons de Frambuesa",
+                category: "Galletas",
+                time: "90 min",
+                difficulty: "Avanzado",
+                servings: "12-15 unidades",
+                image: "https://images.unsplash.com/photo-1569864358642-9d1684040f43?auto=format&fit=crop&w=800&q=80",
+                description: "Delicadas galletas francesas de almendra con ganache de frambuesa.",
+                ingredients: [
+                    "100g de harina de almendras fina",
+                    "100g de azúcar glas",
+                    "75g de claras de huevo (a temp. ambiente)",
+                    "100g de azúcar refinada para el merengue",
+                    "Mermelada o ganache de frambuesa para el relleno"
+                ],
+                steps: [
+                    "Tamiza tres veces la harina de almendra con el azúcar glas.",
+                    "Prepara un merengue firme con las claras y el azúcar refinada.",
+                    "Realiza el 'macaronage' integrando los secos al merengue de forma envolvente.",
+                    "Forma círculos con manga pastelera y deja secar la costra por 30 min.",
+                    "Hornea a 150°C durante 14 minutos. Deja enfriar y rellena."
+                ]
+            },
+            {
+                id: 6,
+                title: "Mousse de Chocolate Oscuro",
+                category: "Postres Fríos",
+                time: "20 min",
+                difficulty: "Fácil",
+                servings: "4 copas",
+                image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&w=800&q=80",
+                description: "Postre clásico francés de textura aireada con chocolate 70% cacao.",
+                ingredients: [
+                    "200g de chocolate amargo de repostería",
+                    "30g de mantequilla",
+                    "4 huevos (claras y yemas separadas)",
+                    "2 cdas de azúcar",
+                    "Una pizca de sal"
+                ],
+                steps: [
+                    "Derrite el chocolate con la mantequilla a baño María.",
+                    "Retira del fuego y añade las yemas una a una mezclando bien.",
+                    "Monta las claras a punto de nieve con la pizca de sal y el azúcar.",
+                    "Incorpora las claras al chocolate con movimientos suavemente envolventes.",
+                    "Sirve en copas y refrigera por un mínimo de 3 horas."
+                ]
+            }
+        ];
+
+        // Estado Global
+        let selectedCategory = 'todos';
+        let searchQuery = '';
+        let favorites = JSON.parse(localStorage.getItem('dulce_favs')) || [];
+        let filterFavoritesOnly = false;
+
+        // Renderizado de Tarjetas de Receta
+        function renderRecipes() {
+            const grid = document.getElementById('recipes-grid');
+            const emptyState = document.getElementById('empty-state');
+            grid.innerHTML = '';
+
+            const filtered = recipes.filter(recipe => {
+                const matchesCategory = selectedCategory === 'todos' || recipe.category === selectedCategory;
+                const matchesSearch = recipe.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                                     recipe.description.toLowerCase().includes(searchQuery.toLowerCase());
+                const matchesFavs = !filterFavoritesOnly || favorites.includes(recipe.id);
+                
+                return matchesCategory && matchesSearch && matchesFavs;
+            });
+
+            if (filtered.length === 0) {
+                emptyState.classList.remove('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+                
+                filtered.forEach(recipe => {
+                    const isFav = favorites.includes(recipe.id);
+                    const card = document.createElement('article');
+                    card.className = "bg-white rounded-3xl overflow-hidden border border-cream-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group";
+                    
+                    card.innerHTML = `
+                        <div class="relative h-52 overflow-hidden">
+                            <img src="${recipe.image}" alt="${recipe.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <button onclick="toggleFavorite(${recipe.id}, event)" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center text-slate-400 hover:text-brand-500 transition-colors shadow-md">
+                                <i class="${isFav ? 'fa-solid text-brand-500' : 'fa-regular'} fa-heart text-base"></i>
+                            </button>
+                            <span class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-md text-cream-800 text-xs font-bold px-3 py-1 rounded-lg">
+                                ${recipe.category}
+                            </span>
+                        </div>
+                        
+                        <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+                            <div>
+                                <h3 class="font-serif-title text-xl font-bold text-cream-800 group-hover:text-brand-500 transition-colors">
+                                    ${recipe.title}
+                                </h3>
+                                <p class="text-xs text-cream-800/70 mt-2 line-clamp-2">
+                                    ${recipe.description}
+                                </p>
+                            </div>
+
+                            <div class="pt-4 border-t border-cream-100 flex items-center justify-between text-xs text-cream-800/80 font-medium">
+                                <span class="flex items-center gap-1.5">
+                                    <i class="fa-regular fa-clock text-brand-500"></i> ${recipe.time}
+                                </span>
+                                <span class="flex items-center gap-1.5">
+                                    <i class="fa-solid fa-signal text-brand-500"></i> ${recipe.difficulty}
+                                </span>
+                            </div>
+
+                            <button onclick="openModal(${recipe.id})" class="w-full bg-cream-100 hover:bg-brand-500 hover:text-white text-cream-800 font-semibold py-3 rounded-xl text-xs transition-all flex items-center justify-center gap-2">
+                                Ver Receta Completa <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            }
+
+            updateFavBadge();
+        }
+
+        // Sistema de Modal
+        function openModal(id) {
+            const recipe = recipes.find(r => r.id === id);
+            if (!recipe) return;
+
+            document.getElementById('modal-img').src = recipe.image;
+            document.getElementById('modal-title').textContent = recipe.title;
+            document.getElementById('modal-category').textContent = recipe.category;
+            document.getElementById('modal-time').textContent = recipe.time;
+            document.getElementById('modal-difficulty').textContent = recipe.difficulty;
+            document.getElementById('modal-servings').textContent = recipe.servings;
+
+            // Ingredientes
+            const ingList = document.getElementById('modal-ingredients');
+            ingList.innerHTML = recipe.ingredients.map(ing => `
+                <li class="flex items-center gap-2 bg-cream-50 p-2.5 rounded-xl border border-cream-200/60">
+                    <i class="fa-solid fa-circle-check text-brand-400 text-xs"></i>
+                    <span>${ing}</span>
+                </li>
+            `).join('');
+
+            // Pasos
+            const stepsList = document.getElementById('modal-steps');
+            stepsList.innerHTML = recipe.steps.map((step, idx) => `
+                <li class="flex gap-3 bg-cream-50 p-3.5 rounded-2xl border border-cream-200/60">
+                    <span class="w-6 h-6 rounded-full bg-brand-500 text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">${idx + 1}</span>
+                    <span class="leading-relaxed">${step}</span>
+                </li>
+            `).join('');
+
+            document.getElementById('recipe-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('recipe-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Filtros y Búsqueda
+        function filterByCategory(category) {
+            selectedCategory = category;
+            filterFavoritesOnly = false;
+            
+            // Actualizar clase activa en botones
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                if (btn.textContent.trim().toLowerCase() === category.toLowerCase() || (category === 'todos' && btn.textContent.trim() === 'Todas')) {
+                    btn.className = "filter-btn active bg-brand-500 text-white font-semibold px-5 py-2 rounded-xl text-sm whitespace-nowrap transition-all shadow-md";
+                } else {
+                    btn.className = "filter-btn bg-white hover:bg-cream-200/50 text-cream-800 border border-cream-200 font-medium px-5 py-2 rounded-xl text-sm whitespace-nowrap transition-all";
+                }
+            });
+
+            renderRecipes();
+        }
+
+        function handleSearch() {
+            searchQuery = document.getElementById('search-input').value;
+            renderRecipes();
+        }
+
+        function resetFilters() {
+            selectedCategory = 'todos';
+            searchQuery = '';
+            filterFavoritesOnly = false;
+            document.getElementById('search-input').value = '';
+            filterByCategory('todos');
+        }
+
+        // Favoritos LocalStorage
+        function toggleFavorite(id, e) {
+            e.stopPropagation();
+            const index = favorites.indexOf(id);
+            if (index > -1) {
+                favorites.splice(index, 1);
+                showToast("Eliminado de tus favoritos");
+            } else {
+                favorites.push(id);
+                showToast("¡Añadido a tus favoritos!");
+            }
+            localStorage.setItem('dulce_favs', JSON.stringify(favorites));
+            renderRecipes();
+        }
+
+        function toggleFilterFavorites() {
+            filterFavoritesOnly = !filterFavoritesOnly;
+            if(filterFavoritesOnly) {
+                showToast("Mostrando solo tus recetas favoritas");
+            }
+            renderRecipes();
+        }
+
+        function updateFavBadge() {
+            document.getElementById('fav-count').textContent = favorites.length;
+            document.getElementById('fav-count-mobile').textContent = favorites.length;
+        }
+
+        // Notificaciones Toast
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').textContent = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Formularios
+        function handleNewsletterSubmit(e) {
+            e.preventDefault();
+            showToast("¡Gracias por suscribirte al boletín!");
+            e.target.reset();
+        }
+
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            showToast("Mensaje enviado con éxito. Te responderemos pronto.");
+            e.target.reset();
+        }
+
+        // Menú Móvil Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Evento Escape para cerrar modal
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Cierre modal click fuera
+        document.getElementById('recipe-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'recipe-modal') closeModal();
+        });
+
+        // Inicialización al cargar la página
+        window.onload = function() {
+            renderRecipes();
+        };
+    </script>
 </body>
 </html>
